@@ -1,6 +1,12 @@
 class Wizard:
     def cast_fireball(self, target):
-        pass
+        if self.__mana >= 20:
+            self.__mana -= 20
+            target.get_fireballed()
+            return f"{self.name} casts fireball at {target.name}"
+        else:
+            raise ValueError(f"{self.name} cannot cast fireball")
+            
 
 
 
@@ -25,3 +31,8 @@ class Wizard:
 
     def drink_mana_potion(self):
         self.__mana += 40
+
+wizard = Wizard("Jashan")
+wizard2 = Wizard("Sonam")
+print(wizard.cast_fireball(wizard2))
+print(wizard.get_mana())
