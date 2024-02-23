@@ -39,5 +39,5 @@ class Time:
     
     
     
-time = Time(1, 0, 0)
+time = Time(-1, 0, 0)
 print(time.hours)
